@@ -1,0 +1,140 @@
+// Addition styles.
+
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  max-width: 1170px;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  outline: none;
+  width: 30px;
+  height: 27px;
+  background: transparent;
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+    width: 100%;
+    height: 3px;
+    background: var(--color-black);
+    transition: background 0.3s, transform 0.3s, opacity 0.3s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color-red);
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+    }
+  }
+
+  &:focus {
+    .burger__item {
+      &::before {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+.main-title {
+  font-family: var(--font-rub);
+  font-weight: 500;
+  font-size: calc(38px + (50 - 38) * ((100vw - 320px) / (1170 - 320)));
+  line-height: calc(50px + (70 - 50) * ((100vw - 320px) / (1170 - 320)));
+
+  &__text {
+    font-weight: 700;
+  }
+}
+
+.title {
+  font-family: var(--font-rub);
+  font-weight: 500;
+  font-size: calc(30px + (35 - 30) * ((100vw - 320px) / (1170 - 320)));
+  line-height: calc(40px + (50 - 40) * ((100vw - 320px) / (1170 - 320)));
+}
+
+.subtitle {
+  font-family: var(--font-rub);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 17px calc(50px + (78 - 50) * ((100vw - 320px) / (1170 - 320)));
+  background: var(--color-red);
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(150, 4, 4, 0.5) 0%, rgba(255, 0, 0, 0.95) 100%);
+    transform: translateY(100%);
+    transition: transform 0.3s;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-rub);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+    color: var(--color-white);
+  }
+
+  &:hover::after {
+    transform: translateY(0);
+  }
+}
+
+.btn-2 {
+  display: inline-block;
+  border: 1px solid var(--color-red);
+  border-radius: 50px;
+  padding: 13px 45px;
+  background: none;
+  transition: background 0.3s;
+  cursor: pointer;
+
+  &__text {
+    font-family: var(--font-rub);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-red);
+    transition: color 0.3s;
+  }
+
+  &:hover {
+    background: var(--color-red);
+
+    .btn-2__text {
+      color: var(--color-white);
+    }
+  }
+}
+
+// End addition styles.

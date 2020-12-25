@@ -1,0 +1,292 @@
+@media (min-height: 1045px) {
+  .hero {
+    min-height: 1045px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .burger {
+    display: flex;
+
+    &--active {
+      animation: burgerAnim 0.7s ease-in-out;
+
+      @keyframes burgerAnim {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(0.9);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .burger__item {
+
+        &:first-child {
+          transform: rotate(-45deg) translate(-4px, -2px);
+          transform-origin: right;
+        }
+
+        &:nth-child(2) {
+          transform: rotate(45deg);
+        }
+
+        &:last-child {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .header__nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 60px;
+    background: linear-gradient(90deg, rgba(98, 4, 4, 0.9) 0%, rgba(255, 0, 0, 0.95) 100%);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    .nav__list {
+      flex-direction: column;
+    }
+
+    .nav__item:not(:last-child) {
+      margin: 0;
+      margin-bottom: 32px;
+    }
+
+    .nav__link {
+      color: var(--color-white);
+    }
+
+    &--active {
+      transform: translateX(0);
+    }
+  }
+
+  .hero {
+
+    &__img {
+      display: none;
+    }
+  }
+
+  .features {
+
+    &__content {
+      justify-content: center;
+    }
+
+    &__cards {
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    &__img {
+      display: none;
+    }
+  }
+
+  .plan {
+
+    &__cards {
+      flex-wrap: wrap;
+      justify-content: space-around
+    }
+
+    &__card {
+      margin: 25px;
+    }
+  }
+
+  .cta {
+
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    &__text {
+      margin: 0 0 30px;
+    }
+
+    &__title,
+    &__subtitle {
+      text-align: center;
+    }
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+
+    &__desc {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0 50px;
+    }
+
+    &__text {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .header {
+
+    &__wrapper {
+      padding: 30px 15px;
+    }
+  }
+
+  .hero {
+
+    &__content {
+      padding: 155px 15px 100px;
+    }
+  }
+
+  .features {
+
+    &__cards {
+      flex-wrap: wrap;
+    }
+
+    &__card {
+      margin: 20px 30px;
+    }
+  }
+
+  .plan {
+
+    &__card {
+      padding: 50px 30px 30px;
+    }
+  }
+
+  .map {
+
+    &__subtitle {
+      margin-bottom: 60px;
+    }
+  }
+
+  .cta {
+
+    &__wrapper {
+      padding: 0;
+      box-shadow: none;
+      background: none;
+    }
+  }
+
+  .footer {
+
+    &__navigation {
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    &__nav {
+
+      &:not(:last-child) {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .header {
+
+    &__logo {
+      flex-direction: column;
+
+      .logo__text {
+        font-size: 16px;
+      }
+    }
+
+    &__profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .profile {
+
+    &__btn {
+
+      &--empty {
+        margin: 0;
+        margin-bottom: 15px;
+      }
+
+      &:last-child {
+        padding: 13px calc(20px + (45 - 20) * ((100vw - 320px) / (1170 - 320)));
+      }
+    }
+  }
+
+  .footer {
+
+    &__navigation {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__title {
+      text-align: center;
+    }
+
+    &__nav {
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@media screen and (max-width: 425.98px) {
+  .reviews {
+
+    &__slider {
+
+      &-slide {
+        padding: 20px;
+
+        &-photo-container {
+          margin: 0 10px 0 0;
+        }
+      }
+
+      &-controller {
+        flex-direction: column;
+      }
+
+      &-pagination {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
